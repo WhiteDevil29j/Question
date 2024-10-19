@@ -10,7 +10,7 @@ let yesButtonSize = 1;
 let noButtonSize = 1;
 
 document.getElementById("yesBtn").addEventListener("click", function () {
-  resultDiv.textContent = "You chose to hang out with Arya!";
+  resultDiv.textContent = "LESGOOO !!!";
   resultDiv.style.color = "#4CAF50"; // Green color for Yes
 
   // Reset the button sizes when "Yes" is clicked
