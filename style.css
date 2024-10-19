@@ -1,0 +1,167 @@
+/* Ensure the html and body take up the full height */
+html,
+body {
+  height: 100%; /* Full height of the viewport */
+  margin: 0; /* Remove default margins */
+  display: flex; /* Make body a flex container */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  background: linear-gradient(
+    135deg,
+    #ffccf9,
+    #ffffff
+  ); /* Pink and white smoke effect */
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite; /* Keep some base animation */
+  font-family: "Poppins", sans-serif; /* Smooth, modern font */
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent overflow due to particles */
+  transition: background-position 0.1s ease-out; /* Smooth movement */
+}
+
+/* Background animation for aesthetic effect */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Particle effect container */
+#particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure particles are behind the content */
+  pointer-events: none; /* Disable interaction with particles */
+  overflow: hidden;
+}
+
+/* Particle styles */
+.particle {
+  position: absolute;
+  background-color: rgba(227, 95, 170, 0.2); /* Semi-transparent white */
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Different particle sizes for variation */
+.particle.large {
+  width: 50px;
+  height: 50px;
+}
+
+.particle.medium {
+  width: 30px;
+  height: 30px;
+}
+
+/* Particle float animation */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  50% {
+    transform: translateY(-100px) translateX(50px) scale(1.2); /* Drift slightly */
+  }
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+}
+
+/* Center container */
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center elements vertically */
+  align-items: center; /* Center elements horizontally */
+  padding: 20px; /* Padding for responsiveness */
+  gap: 20px; /* Space between elements */
+  width: 100%; /* Make it flexible across different screen sizes */
+  max-width: 600px; /* Restrict maximum width on larger screens */
+  border-radius: 20px; /* Smooth rounded container */
+  background-color: rgba(
+    207,
+    106,
+    134,
+    0.5
+  ); /* More transparent background for better blend */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow, reduced opacity */
+  z-index: 1; /* Ensure container is above particles */
+}
+
+/* Responsive heading style */
+h1 {
+  font-size: 2.5rem; /* Adjust size for smaller devices */
+  font-weight: 600;
+  margin: 0;
+  color: #fff; /* Make the text color smoother */
+  letter-spacing: 1.5px; /* Slight spacing for readability */
+}
+
+/* Responsive paragraph style */
+p {
+  font-size: 1.5rem; /* Adjust size for readability */
+  margin-bottom: 20px;
+  font-weight: 400;
+  color: #e0e0e0;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+/* Flexbox to handle the buttons' layout */
+.buttons {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 20px; /* Spacing between the buttons */
+  width: 100%;
+}
+
+/* Button styles */
+button {
+  font-size: 1.2rem; /* Responsive text size */
+  padding: 15px 20px; /* Responsive padding */
+  background-color: #5a3c85; /* Button background */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 50px; /* Smoother round edges */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    flex-grow 0.3s ease, box-shadow 0.3s ease;
+  flex-grow: 1; /* Allows buttons to dynamically grow */
+  min-width: 100px; /* Prevents buttons from shrinking too small */
+  max-width: 200px; /* Prevents buttons from getting too large */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #764fbf;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Smooth shadow effect */
+}
+
+/* Button focus effect */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Glow effect */
+}
+
+/* Result text styling */
+#result {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f4f4f4;
+  margin-top: 20px;
+  min-height: 40px; /* Ensure it takes up space even before result is shown */
+  transition: all 0.3s ease; /* Smooth appearance */
+}
